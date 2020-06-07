@@ -22,6 +22,9 @@ public class MessengerConfiguration {
         objectMapper.registerModule(new JavaTimeModule());
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
         objectMapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        objectMapper.configure(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY, false);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
         return objectMapper;
     }
@@ -37,10 +40,6 @@ public class MessengerConfiguration {
 
             private MappingJackson2HttpMessageConverter customJackson2HttpMessageConverter() {
                 ObjectMapper objectMapper = messengerObjectMapper();
-
-                objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-                objectMapper.configure(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY, false);
-                objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
                 return new MappingJackson2HttpMessageConverter(objectMapper);
             }

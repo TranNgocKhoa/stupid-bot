@@ -39,3 +39,5 @@ mvnw.cmd
 **/gradlew
 **/gradlew.bat
 **/gradle/**
+
+src/main/resources/application-local.yml

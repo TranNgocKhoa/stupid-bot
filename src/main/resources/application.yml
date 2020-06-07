@@ -1,1 +1,6 @@
 verifyToken: dfkjsdfKJkljsdaj232890jHjk
+
+messenger:
+  host: https://graph.facebook.com/{version}/me
+  version: v7.0
+
