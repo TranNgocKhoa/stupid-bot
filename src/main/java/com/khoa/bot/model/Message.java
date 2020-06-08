@@ -29,4 +29,11 @@ public class Message {
     public void setMetadata(String metadata) {
         this.metadata = metadata;
     }
+
+    public static Message text(String text) {
+        Message message = new Message();
+        message.setText(text);
+
+        return message;
+    }
 }

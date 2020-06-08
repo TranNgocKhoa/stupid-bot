@@ -14,6 +14,7 @@ import java.util.Objects;
 @Service
 public class SendApiClient {
     private final static Logger LOGGER = LoggerFactory.getLogger(SendApiClient.class);
+
     private final RestTemplate restTemplate;
     private final MessengerProperties messengerProperties;
 
